@@ -55,7 +55,6 @@ var styles = StyleSheet.create({
 		borderRadius:25,
 	},
 	Vtitle:{
-		flex:1,
 		height:70,
 		backgroundColor:"#eb5343",
 		flexDirection:"row",

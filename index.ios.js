@@ -15,14 +15,17 @@ var {
 
 var Title = require("./modules/Title.js");
 var Footer = require("./modules/Footer.js");
+var Main = require("./modules/List.js");
+
 
 var reactNative = React.createClass({
   render: function() {
     return (
       <View style={styles.views}>
-      <Title style={styles.title} title="标题标标题标题标题标标题标题" info="点" />
+      <Title style={styles.title} title="标题标标题标题标题标标题标题" info="点" ></Title>
+
       <View style={styles.main}>
-        <Text>文字</Text>
+          <Main></Main>
       </View>
 
       <Footer style = {styles.footer}></Footer>
@@ -34,16 +37,20 @@ var reactNative = React.createClass({
 
 var styles = StyleSheet.create({
   views:{
-    flex:1,
-  },
-  title: {
-    height:50,
     flex:1
   },
+  title: {
+    height:50
+  },
   main:{
-    flex:6
+    flex:1,
+    backgroundColor:"#fff",
   },
   footer:{
+     position:"relative",
+     bottom:0,
+     left:0,
+     right:0,
      justifyContent:'flex-end'
   }
 });
