@@ -21,7 +21,7 @@ var Footer = React.createClass({
     render:function(){
       return (
           <View style={styles.footer}>
-              <TouchableHighlight style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
+              <TouchableHighlight onpress={() => this.props.goToHome} style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
               <View style={styles.cell}>
               <Image
                style={styles.icon}
