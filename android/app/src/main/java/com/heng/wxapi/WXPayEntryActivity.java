@@ -1,4 +1,4 @@
-package com.heng.wxapi;           //改为你的包名   package com.xxx.wxapi;
+package com.reactnative.wxapi;           //改为你的包名   package com.xxx.wxapi;
 
 import android.app.Activity;
 import android.content.Context;
