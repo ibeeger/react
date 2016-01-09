@@ -47,17 +47,6 @@ apply plugin: "com.android.application"
  * ]
  */
 
-/**
-project.ext.react = [
-     bundleAssetName: "index.android.bundle",
-     entryFile: "index.android.js",
-     root: "../../",
-     bundleInDebug: true,
-     assetRoots:"./src/main/res/",
-     inputExcludes: ["android/**", "ios/**"]
-]
-**/
-
 apply from: "react.gradle"
 
 android {

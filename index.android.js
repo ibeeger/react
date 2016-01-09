@@ -26,7 +26,7 @@ var reactNative = React.createClass({
       </View>
 
       <Footer style = {styles.footer}></Footer>
-
+          
       </View>
     );
   }

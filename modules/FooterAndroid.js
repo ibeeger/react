@@ -26,7 +26,7 @@ var Footer = React.createClass({
               <View style={styles.cell}>
               <Image
                style={styles.icon}
-               source={require('./assets/home.png')}
+               source={require('./asstes/home.png')}
              />
              <Text style={styles.text}>主页</Text>
               </View>
@@ -36,7 +36,7 @@ var Footer = React.createClass({
               <View style={styles.cell}>
                   <Image
                    style={styles.icon}
-                   source={require('./assets/list.png')}
+                    source={require('./asstes/list.png')}
                  />
                  <Text style={styles.text}>列表</Text>
               </View>
@@ -46,7 +46,7 @@ var Footer = React.createClass({
                 <View style={styles.cell}>
                 <Image
                  style={styles.icon}
-                 source={require('./assets/shop.png')}
+                  source={require('./asstes/shop.png')}
                />
                <Text style={styles.text}>购物</Text>
                 </View>
@@ -57,7 +57,7 @@ var Footer = React.createClass({
               <View style={styles.cell}>
               <Image
                style={styles.icon}
-               source={require('./assets/help.png')}
+                source={require('./asstes/help.png')}
              />
              <Text style={styles.text}>帮助</Text>
               </View>
