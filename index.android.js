@@ -12,7 +12,7 @@ var {
 
 var WeChatAndroid = require('react-native-wechat-android');
 
-var appId = 'wx...';   // 你的AppId 
+var appId = 'wxc95bc6456b2c7143';   // 你的AppId 
 
 var shareWebPageOptions = {
   link: 'https://github.com/beefe/react-native-wechat-android', //分享的网页的链接
@@ -198,4 +198,4 @@ var styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('MyProject', () => MyProject);
+AppRegistry.registerComponent('reactNative', () => MyProject);
