@@ -13,6 +13,7 @@ import com.facebook.soloader.SoLoader;
 
 import com.heng.wechat.WeChatPackage;
 
+
 public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
 
     private ReactInstanceManager mReactInstanceManager;
