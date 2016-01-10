@@ -10,27 +10,73 @@ var {
   StyleSheet,
   Text,
   View,
+  ListView,
 } = React;
 
 
 var Title = require("./modules/Title.js");
 var Footer = require("./modules/FooterAndroid.js");
+var Main = require("./modules/List.js");
+
+
+var url = "http://api.ibeeger.com/driving/0?type=";
+
 
 var reactNative = React.createClass({
+  getInitialState : function(){
+     return {txt:"loading",
+             title:"首页",
+             isload:false,dataSource: new ListView.DataSource({
+        rowHasChanged: (row1, row2) => row1 !== row2,
+      })}
+  },
+  componentDidMount:function(){
+        this.getData("jinggao");
+    },
+  getData:function(item){
+    fetch(url+item)
+      .then((response) => response.json())
+      .then((responseData) => {
+        this.setState({
+          dataSource: this.state.dataSource.cloneWithRows(responseData.arr),
+          isload: true,
+          title:responseData.name
+        });
+      })
+      .done();
+  },
+
+  renderList:function(){
+    if (this.state.isload) {
+      return (
+           <Main dataSource = {this.state.dataSource}></Main>
+        ) 
+    }else{
+      return (<Text>loading</Text>)
+    };
+  },
+
   render: function() {
     return (
       <View style={styles.views}>
-      <Title style={styles.title} title="标题标标题标题标题标标题标题" info="点" />
+      <Title style={styles.title} title={this.state.title} info="" />
       <View style={styles.main}>
-        <Text>文字</Text>
+        {this.renderList()}
       </View>
 
-      <Footer style = {styles.footer}></Footer>
+      <Footer style = {styles.footer} 
+              onPressOne = {() => this.getData("jinggao")}
+              onPressTwo = {() => this.getData("jinling")}
+              onPressThree = {() => this.getData("zhilu")}
+              onPressFour = {() => this.getData("zhishi")}
+      ></Footer>
           
       </View>
     );
   }
 });
+
+
 
 var styles = StyleSheet.create({
   views:{

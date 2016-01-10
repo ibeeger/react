@@ -13,14 +13,14 @@ var {
 
 
 var Query_url = 'http://platform.sina.com.cn/sports_all/client_api?app_key=3571367214&_sport_t_=football&_sport_s_=opta&_sport_a_=teamOrder&type=213&season=2015&format=json';
-
+var url = "http://api.ibeeger.com/driving/0?type=qita";
 
 var Item = React.createClass({
     render:function(){
       return (
         <View style={styles.item}>
             <Image
-                source={{uri: this.props.logo}}
+                source={{uri: "http://oss.files.ibeeger.com"+this.props.logo}}
                 style={styles.logo}
             />
             <View style={styles.rightContainer}>
@@ -46,11 +46,11 @@ var Main = React.createClass({
         this.fetchData();
     },
     fetchData:function(){
-      fetch(Query_url)
+      fetch(url)
       .then((response) => response.json())
       .then((responseData) => {
         this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(responseData.result.data),
+          dataSource: this.state.dataSource.cloneWithRows(responseData.arr),
           loaded: true,
         });
       })
@@ -65,7 +65,7 @@ var Main = React.createClass({
     },
     renderScoreboard:function(item){
         return (
-            <Item logo={item.logo} team_cn={item.team_cn} rank={item.team_order} />
+            <Item logo={item.picurl} team_cn={item.name} rank={item.name} />
         )
     },
 
@@ -76,7 +76,7 @@ var Main = React.createClass({
         return (
             <ListView
             renderFooter = {() => console.log(1)}
-            dataSource={this.state.dataSource}
+            dataSource={this.props.dataSource}
             renderRow={this.renderScoreboard}
             style={styles.main}
             >
@@ -109,8 +109,9 @@ var styles = StyleSheet.create({
       height:60,
       borderTopWidth:1,
       borderStyle:"solid",
-      borderTopColor:"#f0f0f0",
+      borderTopColor:"#e6e6e6",
       flexDirection:"row",
+
     },
     listView:{
 

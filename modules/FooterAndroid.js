@@ -22,7 +22,7 @@ var Footer = React.createClass({
     render:function(){
       return (
           <View style={styles.footer}>
-              <TouchableHighlight style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
+              <TouchableHighlight onPress = {this.props.onPressOne} style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
               <View style={styles.cell}>
               <Image
                style={styles.icon}
@@ -32,7 +32,7 @@ var Footer = React.createClass({
               </View>
               </TouchableHighlight>
 
-              <TouchableHighlight style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
+              <TouchableHighlight  onPress = {this.props.onPressTwo} style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
               <View style={styles.cell}>
                   <Image
                    style={styles.icon}
@@ -42,7 +42,9 @@ var Footer = React.createClass({
               </View>
               </TouchableHighlight>
 
-                <TouchableHighlight style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
+                <TouchableHighlight
+                   onPress = {this.props.onPressThree}
+                 style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
                 <View style={styles.cell}>
                 <Image
                  style={styles.icon}
@@ -53,7 +55,9 @@ var Footer = React.createClass({
                 </TouchableHighlight>
 
 
-              <TouchableHighlight style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
+              <TouchableHighlight 
+                 onPress = {this.props.onPressFour}
+              style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
               <View style={styles.cell}>
               <Image
                style={styles.icon}
