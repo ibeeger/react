@@ -19,7 +19,7 @@ var Footer = require("./modules/FooterAndroid.js");
 var Main = require("./modules/List.js");
 
 
-var url = "http://api.ibeeger.com/driving/0?type=";
+var url = "http://api.ibeeger.com/driving/info/0?type=";
 
 
 var reactNative = React.createClass({
@@ -49,7 +49,7 @@ var reactNative = React.createClass({
   renderList:function(){
     if (this.state.isload) {
       return (
-           <Main dataSource = {this.state.dataSource}></Main>
+           <Main dataSource={this.state.dataSource}></Main>
         ) 
     }else{
       return (<Text>loading</Text>)

@@ -13,7 +13,7 @@ var {
 
 
 var Query_url = 'http://platform.sina.com.cn/sports_all/client_api?app_key=3571367214&_sport_t_=football&_sport_s_=opta&_sport_a_=teamOrder&type=213&season=2015&format=json';
-var url = "http://api.ibeeger.com/driving/0?type=qita";
+var url = "http://api.ibeeger.com/driving/info/0?type=";
 
 var Item = React.createClass({
     render:function(){
@@ -43,7 +43,7 @@ var Main = React.createClass({
         }
     },
     componentDidMount:function(){
-        this.fetchData();
+        // this.fetchData();
     },
     fetchData:function(){
       fetch(url)
@@ -70,12 +70,11 @@ var Main = React.createClass({
     },
 
     render:function(){
-      if(!this.state.loaded){
+      if(!this.props.dataSource){
         return  this.renderLoading();
       }else{
         return (
             <ListView
-            renderFooter = {() => console.log(1)}
             dataSource={this.props.dataSource}
             renderRow={this.renderScoreboard}
             style={styles.main}

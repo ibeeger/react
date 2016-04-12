@@ -1,8 +1,8 @@
 /*
 * @Author: willclass
 * @Date:   2015-12-25 10:52:49
-* @Last Modified by:   willclass
-* @Last Modified time: 2015-12-25 11:42:13
+* @Last Modified by:   ibeeger
+* @Last Modified time: 2016-03-22 19:29:56
 */
 
 'use strict';
@@ -31,7 +31,7 @@ var Footer = React.createClass({
               </View>
               </TouchableHighlight>
 
-              <TouchableHighlight style={styles.touch} underlayColor="rgba(0,0,0,0.3)">
+              <TouchableHighlight style={styles.touch}  underlayColor="rgba(0,0,0,0.3)">
               <View style={styles.cell}>
                   <Image
                    style={styles.icon}
